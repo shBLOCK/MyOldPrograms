@@ -1,0 +1,9 @@
+{
+  "button": {
+    "image": "../assets/cfg/student/assets/button_0.png",
+    "image_on": "../assets/cfg/student/assets/button_1.png",
+    "coordinate": [0.5,0.3],
+    "sound": "../assets/cfg/student/assets/click.ogg"
+  },
+  "file": "../assets/album/苏杭/苏杭.album"
+}

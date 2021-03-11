@@ -1,0 +1,138 @@
+{
+  "main": {
+    "window_size": [1440,960],
+    "images": [
+      {
+        "image": "../assets/album/苏杭/bg1.png",
+        "size": [1440,960],
+        "pos": [0, 0]
+      },
+      {
+        "image": "../assets/album/苏杭/sh1.jpg",
+        "size": [100,100],
+        "pos": [100, 100]
+      }
+    ],
+    "buttons": [
+      {
+        "image": "../assets/album/苏杭/closed_0.png",
+        "image_on": "../assets/album/苏杭/closed_1.png",
+        "coordinate": [0.97,0.03],
+        "sound": "../assets/album/苏杭/click.ogg",
+        "execute": ["quit",null]
+      },
+      {
+        "image": "../assets/album/苏杭/button_0.png",
+        "image_on": "../assets/album/苏杭/button_1.png",
+        "coordinate": [0.3,0.6],
+        "sound": "../assets/album/苏杭/click.ogg",
+        "execute": ["jump","book1"]
+      }
+    ],
+    "texts": [
+      {
+        "text": "姓名：苏杭",
+        "color": [0,0,255],
+        "bg_color": [255,0,0],
+        "pos": [100,100],
+        "font": "../assets/album/苏杭/sh1.ttf",
+        "size": 20
+      }
+    ]
+  },
+  "book1":{
+    "window_size": [1440,960],
+    "images": [
+      {
+        "image": "../assets/album/苏杭/bg2.png",
+        "size": [100,100],
+        "pos": [0, 0]
+      },
+      {
+        "image": "../assets/album/苏杭/Book.png",
+        "size": [100,100],
+        "pos": [600,200]
+      }
+    ],
+    "buttons": [
+      {
+        "image": "../assets/album/苏杭/closed_0.png",
+        "image_on": "../assets/album/苏杭/closed_1.png",
+        "coordinate": [0.7,0.2],
+        "sound": "../assets/album/苏杭/click.ogg",
+        "execute": ["jump","main"]
+      },
+      {
+        "image": "../assets/album/苏杭/next_0.png",
+        "image_on": "../assets/album/苏杭/next_1.png",
+        "coordinate": [0.58,0.55],
+        "sound": "../assets/album/苏杭/click.ogg",
+        "execute": ["jump","book2"]
+      }
+    ],
+    "texts": [
+      {
+        "text": "页数:1/2",
+        "color": [0,0,0],
+        "bg_color": null,
+        "pos": [765,220],
+        "font": "../assets/album/苏杭/sh1.ttf",
+        "size": 20
+      },
+      {
+        "text": "简介：",
+        "color": [0,0,0],
+        "bg_color": null,
+        "pos": [625,235],
+        "font": "../assets/album/苏杭/sh1.ttf",
+        "size": 20
+      }
+    ]
+  },
+  "book2": {
+    "window_size": [1440,960],
+    "images": [
+      {
+        "image": "../assets/album/苏杭/bg2.png",
+        "size": [100,100],
+        "pos": [0, 0]
+      },
+      {
+        "image": "../assets/album/苏杭/Book.png",
+        "size": [100,100],
+        "pos": [600,200]
+      },
+      {
+        "image": "../assets/album/苏杭/sh1.jpg",
+        "size": [100,100],
+        "pos": [620,215]
+      }
+    ],
+    "buttons": [
+      {
+        "image": "../assets/album/苏杭/closed_0.png",
+        "image_on": "../assets/album/苏杭/closed_1.png",
+        "coordinate": [0.7,0.2],
+        "sound": "../assets/album/苏杭/click.ogg",
+        "execute": ["jump","main"]
+      },
+      {
+        "image": "../assets/album/苏杭/previous_0.png",
+        "image_on": "../assets/album/苏杭/previous_1.png",
+        "coordinate": [0.45,0.55],
+        "sound": "../assets/album/苏杭/click.ogg",
+        "execute": ["jump","book1"]
+      }
+    ],
+    "texts": [
+      {
+        "text": "页数:2/2",
+        "color": [0,0,0],
+        "bg_color": null,
+        "pos": [765,220],
+        "font": "../assets/album/苏杭/sh1.ttf",
+        "size": 20
+      }
+    ]
+  }
+}

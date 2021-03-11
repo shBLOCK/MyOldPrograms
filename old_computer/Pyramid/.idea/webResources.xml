@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/assets" />
+            <path value="file://$PROJECT_DIR$/assets/3d - big" />
+            <path value="file://$PROJECT_DIR$/assets/3d - small" />
+            <path value="file://$PROJECT_DIR$/assets/rect" />
+            <path value="file://$PROJECT_DIR$/assets/triangle" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

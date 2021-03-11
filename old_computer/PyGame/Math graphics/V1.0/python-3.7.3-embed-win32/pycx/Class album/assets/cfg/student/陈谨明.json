@@ -1,0 +1,9 @@
+{
+  "button": {
+    "image": "../assets/cfg/student/assets/button_0.png",
+    "image_on": "../assets/cfg/student/assets/button_1.png",
+    "coordinate": [0.5,0.4],
+    "sound": "../assets/cfg/student/assets/click.ogg"
+  },
+  "file": "../assets/album/陈谨明/陈谨明.album"
+}

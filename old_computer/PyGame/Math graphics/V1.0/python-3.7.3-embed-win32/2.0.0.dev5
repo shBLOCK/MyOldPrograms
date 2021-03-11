@@ -1,0 +1,4 @@
+Collecting pygame
+  Using cached https://files.pythonhosted.org/packages/80/2c/3a52e7e9c097229b026b4efbe6711c600f3a84ffdc5f11fd9e7f8932368e/pygame-1.9.6-cp37-cp37m-win32.whl
+Installing collected packages: pygame
+Successfully installed pygame-1.9.6

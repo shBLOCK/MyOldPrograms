@@ -1,0 +1,16 @@
+﻿{
+  "background": {
+    "image": "../assets/gui/bg1.png"
+  },
+  "student": {
+    "album_file":"../assets/cfg/student/%s.json",
+    "student_list": [
+      [null,null,null,null,null,null,null,null],
+      [null,null,null,null,null,null,null,null],
+      [null,null,null,null,null,null,null,null],
+      [null,null,null,null,null,null,null,null],
+      ["陈谨明",null,null,null,"苏杭",null,null,null],
+      [null,null,null,null,null,null,null,null]
+    ]
+  }
+}

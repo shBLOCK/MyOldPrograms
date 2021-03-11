@@ -1,0 +1,1 @@
+..\python-3.7.3-embed-win32\python.exe .\main.py
