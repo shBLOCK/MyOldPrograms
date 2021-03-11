@@ -1,0 +1,773 @@
+{
+  "sounds": {
+      "give_force": "../assets/sound/give_force.ogg"
+  },
+  "gui":{
+    "prompt_text":{
+      "size": 18,
+      "font": "../assets/font/MC.ttf"
+    },
+    "maps": {
+      "give_force": "../assets/textures/maps/give_force.png"
+    },
+    "place_shape_toolbar": {
+      "image": {
+        "bar": "../assets/textures/gui/toolbar/place_shape_toolbar.png",
+        "selected": "../assets/textures/gui/toolbar/selected.png"
+      },
+      "tools": [
+        "circle",
+        "box",
+        "segment",
+        "poly",
+        "static_circle",
+        "static_box",
+        "static_segment",
+        "static_poly"
+      ],
+      "prompt_text": [
+        "放置圆形刚体",
+        "放置方形刚体",
+        "放置线段刚体",
+        "放置多边形刚体",
+        "放置静止的圆形刚体",
+        "放置静止的方形刚体",
+        "放置静止的线段刚体",
+        "放置静止的多边形刚体"
+      ],
+      "bar_pos": [10, 10],
+      "check_topleft_list": [
+        [0, 0],
+        [40, 0],
+        [80, 0],
+        [120, 0],
+        [160, 0],
+        [200, 0],
+        [240, 0],
+        [280, 0]
+      ]
+    },
+    "place_constraint_toolbar": {
+      "image": {
+        "bar":"../assets/textures/gui/toolbar/place_constraint_toolbar.png",
+        "selected": "../assets/textures/gui/toolbar/selected.png"
+      },
+      "tools": [
+        "pin_joint",
+        "slide_joint",
+        "pivot_joint",
+        "groove_joint",
+        "damped_spring",
+        "damped_rotary_spring",
+        "rotary_limit_joint",
+        "ratchet_joint",
+        "gear_joint",
+        "simple_motor"
+      ],
+      "prompt_text": [
+        "放置实心条",
+        "放置长度可变的实心条",
+        "放置轴承",
+        "放置带滑块的轴承",
+        "放置阻尼弹簧",
+        "放置角度弹簧",
+        "约束两个物体的相对旋转",
+        "放置棘轮",
+        "使一对物体的角速度比保持恒定",
+        "放置电机(使一对物体的相对角速度保持恒定)"
+      ],
+      "bar_pos": [10, 60],
+      "check_topleft_list": [
+        [0, 0],
+        [40, 0],
+        [80, 0],
+        [120, 0],
+        [160, 0],
+        [200, 0],
+        [240, 0],
+        [280, 0],
+        [320, 0],
+        [360, 0]
+      ]
+    },
+    "utilities_toolbar": {
+      "image": {
+        "bar": "../assets/textures/gui/toolbar/utilities_toolbar.png",
+        "selected": "../assets/textures/gui/toolbar/selected.png"
+      },
+      "tools": [
+        "give_force"
+      ],
+      "prompt_text": [
+        "给刚体一个力"
+      ],
+      "bar_pos": [10, 110],
+      "check_topleft_list": [
+        [0, 0]
+      ]
+    },
+    "menus": {
+      "about_software": {
+        "rect": [0, 0, 1920, 1080],
+        "alpha": 200,
+        "texts": [
+          {
+            "text": "作者：苏杭",
+            "pos": [100, 100],
+            "size": 50
+          }
+        ]
+      },
+      "adj_circle": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "圆形刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 270],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "质量",
+            "text_color": [0, 0, 0],
+            "name": "mass",
+            "adj_callback": "space.adj_mass"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ],
+        "buttons": [
+          {
+            "pos": [10, 450],
+            "width": 200,
+            "press_callback": "space.start_moving_distance_recording",
+            "text": "开始记录移动距离" ,
+            "prompt_text": "记录刚体的移动距离"
+          }
+        ]
+      },
+      "adj_static_circle": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "静止的圆形刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ]
+      },
+      "adj_box": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "方形刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+            {
+              "pos": [10, 90],
+              "points": "range(256)",
+              "width": 300,
+              "text": "红",
+              "text_color": [255, 0, 0],
+              "name": "color_r"
+            },
+            {
+              "pos": [10, 140],
+              "points": "range(256)",
+              "width": 300,
+              "text": "绿",
+              "text_color": [0, 255, 0],
+              "name": "color_g"
+            },
+            {
+              "pos": [10, 190],
+              "points": "range(256)",
+              "width": 300,
+              "text": "蓝",
+              "text_color": [0, 0, 255],
+              "name": "color_b"
+            },
+            {
+              "pos": [10, 270],
+              "points": "space.create_scale_points_1()",
+              "width": 300,
+              "text": "质量",
+              "text_color": [0, 0, 0],
+              "name": "mass",
+              "adj_callback": "space.adj_mass"
+            },
+            {
+              "pos": [10, 320],
+              "points": "space.create_scale_points_1()",
+              "width": 300,
+              "text": "弹性",
+              "text_color": [0, 0, 0],
+              "name": "elasticity"
+            },
+            {
+              "pos": [10, 370],
+              "points": "space.create_scale_points_1()",
+              "width": 300,
+              "text": "摩擦系数",
+              "text_color": [0, 0, 0],
+              "name": "friction"
+            }
+        ],
+        "buttons": [
+          {
+            "pos": [10, 450],
+            "width": 200,
+            "press_callback": "space.start_moving_distance_recording",
+            "text": "开始记录移动距离" ,
+            "prompt_text": "记录刚体的移动距离"
+          }
+        ]
+      },
+      "adj_static_box": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "静止的方形刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ]
+      },
+      "adj_segment": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "线段刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 270],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "质量",
+            "text_color": [0, 0, 0],
+            "name": "mass",
+            "adj_callback": "space.adj_mass"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ],
+        "buttons": [
+          {
+            "pos": [10, 450],
+            "width": 200,
+            "press_callback": "space.start_moving_distance_recording",
+            "text": "开始记录移动距离" ,
+            "prompt_text": "记录刚体的移动距离"
+          }
+        ]
+      },
+      "adj_static_segment": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "静止的线段刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ]
+      },
+      "adj_poly": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "多边形刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 270],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "质量",
+            "text_color": [0, 0, 0],
+            "name": "mass",
+            "adj_callback": "space.adj_mass"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ],
+        "buttons": [
+          {
+            "pos": [10, 450],
+            "width": 200,
+            "press_callback": "space.start_moving_distance_recording",
+            "text": "开始记录移动距离" ,
+            "prompt_text": "记录刚体的移动距离"
+          }
+        ]
+      },
+      "adj_static_poly": {
+        "rect": [1500, 0, 420, 1080],
+        "texts": [
+          {
+            "text": "静止的多边形刚体:",
+            "pos": [10, 10]
+          },
+          {
+            "text": "颜色:",
+            "pos": [10, 60]
+          }
+        ],
+        "scales": [
+          {
+            "pos": [10, 90],
+            "points": "range(256)",
+            "width": 300,
+            "text": "红",
+            "text_color": [255, 0, 0],
+            "name": "color_r"
+          },
+          {
+            "pos": [10, 140],
+            "points": "range(256)",
+            "width": 300,
+            "text": "绿",
+            "text_color": [0, 255, 0],
+            "name": "color_g"
+          },
+          {
+            "pos": [10, 190],
+            "points": "range(256)",
+            "width": 300,
+            "text": "蓝",
+            "text_color": [0, 0, 255],
+            "name": "color_b"
+          },
+          {
+            "pos": [10, 320],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "弹性",
+            "text_color": [0, 0, 0],
+            "name": "elasticity"
+          },
+          {
+            "pos": [10, 370],
+            "points": "space.create_scale_points_1()",
+            "width": 300,
+            "text": "摩擦系数",
+            "text_color": [0, 0, 0],
+            "name": "friction"
+          }
+        ]
+      }
+    },
+    "menu_assets": {
+      "font": "../assets/font/MC.ttf",
+      "font_size": 16,
+      "text_color": {
+        "text": {
+          "default": [0, 0, 0]
+        },
+        "button": {
+          "enable": [255, 255, 255],
+          "unenable": [100, 100, 100],
+          "mouse_on": [255, 255, 0]
+        },
+        "scale": {
+          "default": [255, 255, 255],
+          "mouse_on": [255, 255, 0],
+          "unenable": [100, 100, 100]
+        }
+      },
+      "sound": {
+        "button": "../assets/sound/click.ogg",
+        "scale": "../assets/sound/click.ogg",
+        "toolbar": "../assets/sound/click.ogg"
+      },
+      "image": {
+        "button": {
+          "release": "../assets/textures/gui/button/release.png",
+          "mouse_on": "../assets/textures/gui/button/mouse_on.png",
+          "press": "../assets/textures/gui/button/press.png",
+          "unenable": "../assets/textures/gui/button/press.png"
+        },
+        "scale": {
+          "slider": "../assets/textures/gui/scale/slider.png",
+          "slider_mouse_on": "../assets/textures/gui/scale/slider_mouse_on.png",
+          "slider_unenable": "../assets/textures/gui/scale/slider_unenable.png",
+          "track": "../assets/textures/gui/scale/track.png",
+          "track_mouse_on": "../assets/textures/gui/scale/track.png",
+          "track_unenable": "../assets/textures/gui/scale/track.png"
+        },
+        "menu": {
+          "background": "../assets/textures/gui/background.png"
+        }
+      },
+      "button": {
+        "menu": {
+          "close": {
+            "im_release": "../assets/textures/gui/button/menu_close_0.png",
+            "im_mouse_on": "../assets/textures/gui/button/menu_close_1.png",
+            "im_press": "../assets/textures/gui/button/menu_close_2.png",
+            "im_unenable": "../assets/textures/gui/button/menu_close_2.png"
+          }
+        }
+      }
+    }
+
+  },
+  "mouse": {
+    "move": {
+      "size": [32,32],
+      "hotspot": [16,16],
+      "string": [
+        "              ....              ",
+        "             .XXXX.             ",
+        "            .XXXXXX.            ",
+        "           .XX.XX.XX.           ",
+        "          .XX..XX..XX.          ",
+        "         .XX. .XX. .XX.         ",
+        "          ..  .XX.  ..          ",
+        "              .XX.              ",
+        "              .XX.              ",
+        "     .        .XX.        .     ",
+        "    .X.       .XX.       .X.    ",
+        "   .XX.       .XX.       .XX.   ",
+        "  .XX.        .XX.        .XX.  ",
+        " .XX.         .XX.         .XX. ",
+        ".XX............XX............XX.",
+        ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.",
+        ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.",
+        ".XX............XX............XX.",
+        " .XX.         .XX.         .XX. ",
+        "  .XX.        .XX.        .XX.  ",
+        "   .XX.       .XX.       .XX.   ",
+        "    .X.       .XX.       .X.    ",
+        "     .        .XX.        .     ",
+        "              .XX.              ",
+        "              .XX.              ",
+        "          ..  .XX.  ..          ",
+        "         .XX. .XX. .XX.         ",
+        "          .XX..XX..XX.          ",
+        "           .XX.XX.XX.           ",
+        "            .XXXXXX.            ",
+        "             .XXXX.             ",
+        "              ....              "
+      ]
+    },
+    "circle": {
+      "size": [16,16],
+      "hotspot": [8,8],
+      "string": [
+        "     XXXXXX     ",
+        "   XX      XX   ",
+        "  XX        XX  ",
+        " XX          XX ",
+        " X            X ",
+        "X              X",
+        "X              X",
+        "X              X",
+        "X              X",
+        "X              X",
+        "X              X",
+        " X            X ",
+        " XX          XX ",
+        "  XX        XX  ",
+        "   XX      XX   ",
+        "     XXXXXX     "
+      ]
+    },
+    "box": {
+      "size": [16,16],
+      "hotspot": [8,8],
+      "string": [
+        "XXXXXXXXXXXXXXXX",
+        "XXXXXXXXXXXXXXXX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XX            XX",
+        "XXXXXXXXXXXXXXXX",
+        "XXXXXXXXXXXXXXXX"
+      ]
+    }
+  }
+}
